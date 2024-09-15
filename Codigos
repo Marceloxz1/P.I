@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+
+// Função para classificar a prioridade do requisito
+std::string classificarRequisito(int impactoUsuario, int complexidadeTecnica, int recursosNecessarios) {
+    if (impactoUsuario >= 8 || recursosNecessarios > 10) {
+        return "Alta";
+    } else if (complexidadeTecnica > 5 || recursosNecessarios >= 5) {
+        return "Media";
+    } else {
+        return "Baixa";
+    }
+}
+
+int main() {
+    std::string nomeRequisito;
+    int impactoUsuario, complexidadeTecnica, recursosNecessarios;
+
+    std::cout << "Informe o nome do requisito que está sendo avaliado: ";
+    getline(std::cin, nomeRequisito);
+    std::cout << "Informe o impacto no usuário (1 a 10): ";
+    std::cin >> impactoUsuario;
+    std::cout << "Informe a complexidade técnica (1 a 10): ";
+    std::cin >> complexidadeTecnica;
+    std::cout << "Informe os recursos necessários (1 a 10): ";
+    std::cin >> recursosNecessarios;
+
+    std::string prioridade = classificarRequisito(impactoUsuario, complexidadeTecnica, recursosNecessarios);
+    std::cout << "A prioridade do requisito '" << nomeRequisito << "' é: " << prioridade << std::endl;
+
+    return 0;
+}
