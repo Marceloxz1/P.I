@@ -1,0 +1,27 @@
+#include <iostream>
+
+void verificarSistema(int ram) {
+    if (ram < 4) {
+        std::cout << "O programa pode ter dificuldades de funcionamento devido à baixa memória RAM disponível.\n";
+    } else if (ram >= 4 && ram < 8) {
+        std::cout << "O sistema atende aos requisitos mínimos, mas o desempenho pode não ser o ideal.\n";
+    } else {
+        std::cout << "O sistema está dentro dos requisitos recomendados.\n";
+    }
+}
+
+void iniciarCadastro() {
+    std::cout << "Iniciando o processo de cadastro...\n";
+    // Adicione o código de cadastro aqui
+}
+
+int main() {
+    int ramSistema;
+    std::cout << "Informe a quantidade de RAM do sistema (em GB): ";
+    std::cin >> ramSistema;
+
+    verificarSistema(ramSistema);
+    iniciarCadastro();  // Continua com o cadastro independentemente da RAM
+
+    return 0;
+}
