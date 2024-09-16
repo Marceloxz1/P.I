@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+
+// Função para avaliar a amigabilidade da interface
+std::string avaliarInterface(int clareza, int simplicidade, int complexidadeVisual) {
+    // Condições para ser considerada amigável
+    if (clareza >= 8 && simplicidade >= 8 && complexidadeVisual <= 3) {
+        return "Amigável";
+    } else {
+        return "Não amigável";
+    }
+}
+
+int main() {
+    int clareza, simplicidade, complexidadeVisual;
+    std::string nomeInterface;
+
+    std::cout << "Informe o nome da interface que está sendo avaliada: ";
+    getline(std::cin, nomeInterface);
+
+    std::cout << "Avalie a clareza da interface (1 a 10, onde 10 é muito claro): ";
+    std::cin >> clareza;
+
+    std::cout << "Avalie a simplicidade da interface (1 a 10, onde 10 é muito simples): ";
+    std::cin >> simplicidade;
+
+    std::cout << "Avalie a complexidade visual da interface (1 a 10, onde 1 é muito simples): ";
+    std::cin >> complexidadeVisual;
+
+    std::string avaliacao = avaliarInterface(clareza, simplicidade, 10 - complexidadeVisual); // 10 - complexidade para ajustar a escala
+    std::cout << "A interface '" << nomeInterface << "' é: " << avaliacao << std::endl;
+
+    return 0;
+}
